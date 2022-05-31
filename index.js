@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const port = 5050;
 
+var headers = {
+    'Content-Type': 'text/json; charset=utf-8',
+    'Cache-Control': 'public, max-age=300',
+    ETag: jsETag
+   };
+
 const JsonResponse = {
     "quotes": [
             {
@@ -40,6 +46,7 @@ const JsonResponse = {
     };
 
 app.get('/quotes.json', (req, res) => {
+  res.writeHead(200, headers);
   res.json(JsonResponse);
 });
 
