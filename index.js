@@ -9,8 +9,8 @@ const JsonResponse = {
             "author" :"Ibrahim Menk"
            },
           {
-            quote: "Obstacles on our path are some of the tests of life. They make us stronger, better people and open up doors we had never imagined.",
-             author: "Mufti Menk"
+            "quote": "Obstacles on our path are some of the tests of life. They make us stronger, better people and open up doors we had never imagined.",
+            "author": "Mufti Menk"
           },
           {
             "quote": "Every time things become difficult for you, wait for the relief.",
