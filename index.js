@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 5050;
+const port = 7070;
 
 const jsonData = {
     "quotes":[
@@ -40,9 +40,9 @@ const jsonData = {
  };
 
 //console.log(jsonData);
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
+app.get('/quotes.json', (req, res) => {
+    response.write(JSON.stringify(jsonData));
+  });
   
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
