@@ -1,4 +1,3 @@
-const axios = require('axios');
 const express = require('express');
 const app = express();
 const port = 5050;
@@ -15,7 +14,7 @@ const JsonResponse = {
           },
           {
             "quote": "Every time things become difficult for you, wait for the relief.",
-            "author": "Shaykh Ibn Uthaym"
+            "author": "Shaykh Ibn Uthaymeen"
           },
           {
             "quote": "What really counts are good endings, not flawed beginnings",
@@ -42,26 +41,8 @@ const JsonResponse = {
 
 app.get('/quotes.json', (req, res) => {
   res.json(JsonResponse);
-})
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-})
-
-// Make Express pass '2' as the 3rd argument to `JSON.stringify()`
-app.set('json spaces', 2);
-
-app.get('*', function(req, res) {
-  res.json({ answer: 42, hello: 'world' });
 });
-
-const server = app.listen(port);
-
-const response = axios.get(`http://localhost:${port}`, {
-  transformResponse: res => res // Disable automatic JSON parsing
-});
-// {
-//   "answer": 42,
-//   "hello": "world"
-// }
-response.data;
